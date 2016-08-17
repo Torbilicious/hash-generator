@@ -2,14 +2,40 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Hello World!</title>
+      <link rel="stylesheet" type="text/css" href="style.css">
+      <title>Hash Generator</title>
   </head>
   <body>
-    <h1>Hello World!</h1>
-    <!-- All of the Node.js APIs are available in this renderer process. -->
-    We are using node <script>document.write(process.versions.node)</script>,
-    Chromium <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
+
+  <p>Hashes: </p>
+
+  <div id="hashes">
+
+      <div id="sha1-hash">
+          <p>sha1: </p>
+          <input class="hash-input" id="sha1-input" placeholder="sha1 hash"/>
+          <p></p>
+      </div>
+
+      <div id="sha256-hash">
+          <p>sha256: </p>
+          <input class="hash-input" id="sha256-input" placeholder="sha256 hash"/>
+          <p></p>
+      </div>
+
+      <div id="sha512-hash">
+          <p>sha512: </p>
+          <input class="hash-input" id="sha512-input" placeholder="sha512 hash"/>
+          <p></p>
+      </div>
+
+      <div id="md5-hash">
+          <p>md5: </p>
+          <input class="hash-input" id="md5-input" placeholder="md5 hash"/>
+          <p></p>
+      </div>
+  </div>
+
   </body>
 
   <script>
