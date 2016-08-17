@@ -3,9 +3,6 @@
 // All of the Node.js APIs are available in this process.
 
 
-var sha1 = "sha1 no yet calculated";
-var sha256Hash = "sha256 no yet calculated";
-
 var hashesMap = new Map();
 
 function generateHashFromFile(file, algorithm = 'sha1') {
@@ -17,8 +14,6 @@ function generateHashFromFile(file, algorithm = 'sha1') {
     var shasum = crypto.createHash(algorithm);
 
     var s = fs.ReadStream(filename);
-
-    var hash = "";
 
     s.on('data', function (d) {
         shasum.update(d);
