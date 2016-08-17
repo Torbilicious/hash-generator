@@ -2,6 +2,7 @@
 // be executed in the renderer process for that window.
 // All of the Node.js APIs are available in this process.
 
+const clipboard = require('electron').clipboard;
 
 var hashesMap = new Map();
 
@@ -53,14 +54,43 @@ function displayHashes() {
     md5Input.value = hashesMap.get("md5");
 }
 
+function connectButtons() {
+
+    const sha1Btn = document.getElementById("sha1-button");
+    sha1Btn.addEventListener('click', function () {
+        clipboard.writeText(hashesMap.get("sha1"));
+    });
+
+    const sha256Btn = document.getElementById("sha256-button");
+    sha256Btn.addEventListener('click', function () {
+        clipboard.writeText(hashesMap.get("sha256"));
+    });
+
+    const sha512Btn = document.getElementById("sha512-button");
+    sha512Btn.addEventListener('click', function () {
+        clipboard.writeText(hashesMap.get("sha512"));
+    });
+
+    const md5Btn = document.getElementById("md5-button");
+    md5Btn.addEventListener('click', function () {
+        clipboard.writeText(hashesMap.get("md5"));
+    });
+}
+
 document.ondragover = document.ondrop = (ev) => {
+
     ev.preventDefault()
 };
 
 document.body.ondrop = (ev) => {
-    console.log(ev.dataTransfer.files[0].path + "\n");
 
-    generateHashes(ev.dataTransfer.files[0].path);
+    var file = ev.dataTransfer.files[0].path;
+
+    console.log(file + "\n");
+
+    generateHashes(file);
 
     ev.preventDefault()
 };
+
+connectButtons();
