@@ -56,23 +56,23 @@ function displayHashes() {
 
 function connectButtons() {
 
-    const sha1Btn = document.getElementById("sha1-button");
-    sha1Btn.addEventListener('click', function () {
+    const sha1CopyBtn = document.getElementById("sha1-button");
+    sha1CopyBtn.addEventListener('click', function () {
         clipboard.writeText(hashesMap.get("sha1"));
     });
 
-    const sha256Btn = document.getElementById("sha256-button");
-    sha256Btn.addEventListener('click', function () {
+    const sha256CopyBtn = document.getElementById("sha256-button");
+    sha256CopyBtn.addEventListener('click', function () {
         clipboard.writeText(hashesMap.get("sha256"));
     });
 
-    const sha512Btn = document.getElementById("sha512-button");
-    sha512Btn.addEventListener('click', function () {
+    const sha512CopyBtn = document.getElementById("sha512-button");
+    sha512CopyBtn.addEventListener('click', function () {
         clipboard.writeText(hashesMap.get("sha512"));
     });
 
-    const md5Btn = document.getElementById("md5-button");
-    md5Btn.addEventListener('click', function () {
+    const md5CopyBtn = document.getElementById("md5-button");
+    md5CopyBtn.addEventListener('click', function () {
         clipboard.writeText(hashesMap.get("md5"));
     });
 }
